@@ -24,6 +24,7 @@ setwd('/srv/shiny-server/WDCM_GeoDashboard/data/')
 ### --- fetch projecttopic tables
 lF <- list.files()
 lF <- lF[grepl("^wdcm_geoitem_", lF)]
+lF <- lF[grepl(".csv", lF)]
 categories <- vector(mode = "list", length = length(lF))
 for (i in 1:length(lF)) {
   categories[[i]] <- fread(lF[i], data.table = F)
